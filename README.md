@@ -38,7 +38,7 @@ password
 use website
 ```
 
-## error対処
+## error対処法
 logs -> chmod -R 777 storage logs   
 database -> php artisan migrate:refresh --seed  
 require index.php -> composer update  
