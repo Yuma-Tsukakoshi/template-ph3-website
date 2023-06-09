@@ -1,5 +1,5 @@
 <x-top>
-    <x-slot name= 'title'>
+    <x-slot name = 'title'>
         ITクイズ | POSSE 初めてのWeb制作
     </x-slot>
 

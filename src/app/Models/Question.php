@@ -11,7 +11,7 @@ class Question extends Model
 {
     use HasFactory;
 
-    public function questions()
+    public function choices()
     {
         // 1対多の関係を定義
         return $this->hasMany(Choice::class);

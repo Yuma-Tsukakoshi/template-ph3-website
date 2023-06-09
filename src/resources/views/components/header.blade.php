@@ -1,6 +1,6 @@
 
   <header id="js-header" class="l-header p-header">
-    <div class="p-header__logo"><img src="./assets/img/logo.svg" alt="POSSE"></div>
+    <div class="p-header__logo"><img src="{{asset('/assets/img/logo.svg')}}" alt="POSSE"></div>
     <button class="p-header__button" id="js-headerButton"></button>
     <div class="p-header__inner">
       <nav class="p-header__nav">
@@ -9,7 +9,8 @@
             <a href="#" class="p-header__nav__item__link">POSSEとは</a>
           </li>
           <li class="p-header__nav__item">
-            <a href="{{route('quizzes')}}" class="p-header__nav__item__link">クイズ一覧</a>
+            {{-- <a href="{{route('quizzes')}}" class="p-header__nav__item__link">クイズ一覧</a> --}}
+            <a href="#" class="p-header__nav__item__link">クイズ一覧</a>
           </li>
         </ul>
       </nav>

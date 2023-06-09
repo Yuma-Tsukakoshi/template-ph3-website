@@ -1,7 +1,7 @@
 <x-top>
-    <x-slot name= 'title'>
+    {{-- <x-slot name = 'title'>
         自己紹介クイズ | POSSE 初めてのWeb制作
-    </x-slot>
+    </x-slot> --}}
 
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
