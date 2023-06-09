@@ -13,6 +13,7 @@ class Question extends Model
 
     public function questions()
     {
+        // 1対多の関係を定義
         return $this->hasMany(Choice::class);
     }
 }

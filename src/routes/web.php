@@ -24,7 +24,7 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/quiz', [QuizController::class , 'index'])->name('quiz');
+Route::get('/quizzes', [QuizController::class , 'index'])->name('quizzes');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

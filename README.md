@@ -18,6 +18,11 @@ DB_DATABASE=website
 DB_USERNAME=posse
 DB_PASSWORD=password
 ```
+# seederでダミーデータ入れるときのコマンド
+```bash
+php artisan db:seed --class=ChoiceSeeder
+```
+
 <img width="202" alt="スクリーンショット 2022-06-07 16 16 15" src="https://user-images.githubusercontent.com/74942852/172319499-e9457712-e1c6-4f3b-aa64-53a748b39d1a.png">
 
 ## db接続方法

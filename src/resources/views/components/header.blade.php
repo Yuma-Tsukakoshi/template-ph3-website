@@ -9,7 +9,7 @@
             <a href="#" class="p-header__nav__item__link">POSSEとは</a>
           </li>
           <li class="p-header__nav__item">
-            <a href="{{route('quiz')}}" class="p-header__nav__item__link">クイズ</a>
+            <a href="{{route('quizzes')}}" class="p-header__nav__item__link">クイズ一覧</a>
           </li>
         </ul>
       </nav>

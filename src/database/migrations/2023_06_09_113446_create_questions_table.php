@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('content');
             $table->string('image');
             $table->string('supplement')->nullable();
+            $table->unsignedBigInteger('quiz_id');
             $table->timestamps();
         });
     }
