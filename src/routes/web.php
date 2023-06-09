@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\IndexController;
+use GuzzleHttp\Psr7\Query;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('index');
 });
+
+Route::get('/quiz', [QuizController::class , 'index'])->name('quiz');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
