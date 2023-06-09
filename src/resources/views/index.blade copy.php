@@ -1,7 +1,15 @@
-<x-top>
-  <x-slot name='title'>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+@component('components.head')
+  @slot('title')
     POSSE 初めてのWeb制作
-  </x-slot>
+  @endslot
+@endcomponent
+
+<body>
+  @include('components.header')
+  <!-- /.l-header .p-header -->
 
   <main class="l-main">
     <section class="p-top-hero">
@@ -97,6 +105,8 @@
       <small lang="en">©︎2022 POSSE</small>
     </div>
   </footer>
-</x-top>
+  <!-- /.l-footer .p-footer -->
 
+</body>
 
+</html>
