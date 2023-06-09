@@ -131,3 +131,4 @@
 2. `Log in` を押すとフォームが正常に表示されていること
 
 <img width="1020" alt="ログイン画面" src="https://github.com/posse-ap/template-ph3-website/assets/33271639/45729c65-e442-43a4-abff-1ad4240ba5fe">
+
