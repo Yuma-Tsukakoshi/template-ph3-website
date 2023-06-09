@@ -1,6 +1,6 @@
 <x-top>
-    <x-slot name = 'title'>
-        ITクイズ | POSSE 初めてのWeb制作
+    <x-slot name='title'>
+        ITクイズ 初めてのWeb制作
     </x-slot>
 
     <div
