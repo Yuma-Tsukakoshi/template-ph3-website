@@ -21,16 +21,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//トップページ表示
 Route::get('/index', function () {
     return view('index');
 });
 
+// クイズページ表示 1と2はid属性で指定する
+// Route::get('/quizzes', [QuizController::class, 'index']);
 Route::get('/quizzes/1', [QuizController::class , 'index']);
 // Route::get('/quizzes/2', [QuizController::class , 'index']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
