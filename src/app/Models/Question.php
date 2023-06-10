@@ -10,6 +10,16 @@ use App\Models\Choice;
 class Question extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'content',
+        'image',
+        'supplement',
+    ];
+
+    protected $guarded = [
+        'id',
+        'quiz_id',
+    ];
 
     public function choices()
     {
