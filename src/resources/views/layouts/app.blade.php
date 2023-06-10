@@ -17,7 +17,6 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
-
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
@@ -27,10 +26,27 @@
                 </header>
             @endif
 
+            {{ $slot }}
+
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+            <div class="flex h-screen bg-gray-50">
+                @if(request()->url() !== route('dashboard'))
+                    @include('layouts.aside')
+                @endif
+                <div class="flex flex-col flex-1 w-full">
+                    <main class="h-full pb-16 overflow-y-auto">
+                        <div class="container grid px-6 mx-auto">
+                            <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                                <div class="w-full overflow-x-auto my-6">
+                                    @if (isset($table))
+                                        {{ $table }}
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
         </div>
     </body>
 </html>

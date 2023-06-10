@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Queue\Failed\PrunableFailedJobProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
@@ -14,6 +16,11 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
+    public function index(){
+        $users = User::all();
+        return view('profile.index',compact('users'));
+    }
+
     public function edit(Request $request): View
     {
         return view('profile.edit', [
