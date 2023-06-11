@@ -81,5 +81,9 @@ class Question1Controller extends Controller
     public function destroy(string $id)
     {
         //
+        $question = Question::find($id);
+        $question->delete();
+
+        return redirect()->route('auth.quiz1');
     }
 }

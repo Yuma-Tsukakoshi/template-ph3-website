@@ -34,7 +34,10 @@
             <td class="px-4 py-3">
               <div class="flex items-center space-x-4 text-sm">
                 <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-blue-500 rounded-lg focus:outline-none focus:shadow-outline-gray"><a href="{{route('auth.quiz1.edit',['id'=>$question->id])}}">{{ __('編集') }}">編集</a></button>
-                <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-gray-500 rounded-lg focus:outline-none focus:shadow-outline-gray"><a href="#">削除</a></button>
+                <form method="POST" action="{{route('member.destroy',['id'=>$question->id])}}">
+                  @csrf
+                  <button type="submit" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-gray-500 rounded-lg focus:outline-none focus:shadow-outline-gray">削除</button>
+                </form>
               </div>
             </td>
           </tr>

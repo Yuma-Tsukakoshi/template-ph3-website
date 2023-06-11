@@ -47,6 +47,7 @@ Route::group(['prefix'=>'member'],function(){
     Route::post('/auth/quiz1/store',[Question1Controller::class, 'store'])->name('auth.quiz1.store');
     Route::get('/auth/quiz1/edit/{id}',[Question1Controller::class, 'edit'])->name('auth.quiz1.edit');
     Route::post('/auth/quiz1/update/{id}',[Question1Controller::class, 'update'])->name('auth.quiz1.update');
+    Route::post('/auth/quiz1/destroy/{id}',[Question1Controller::class, 'destroy'])->name('auth.quiz1.destroy');
 });
 
 Route::middleware(['auth','admin'])->group(function () {
