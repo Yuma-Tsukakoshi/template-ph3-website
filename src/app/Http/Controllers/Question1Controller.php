@@ -13,6 +13,8 @@ class Question1Controller extends Controller
     public function index()
     {
         //
+        $questions = Question::all();
+        return view('auth_.quiz1', compact('questions'));
     }
 
     /**
@@ -21,7 +23,7 @@ class Question1Controller extends Controller
     public function create()
     {
         //
-        return view('auth_.quiz1.create');
+        return view('auth_.quiz1_create');
     }
 
     /**
@@ -56,7 +58,7 @@ class Question1Controller extends Controller
     {
         //
         $question = Question::find($id);
-        return view('auth_.quiz1.edit', compact('question')); 
+        return view('auth_.quiz1_edit', compact('question')); 
     }
 
     /**

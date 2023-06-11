@@ -36,7 +36,7 @@
                         
                         <div>
                             <label for="form-quizId">分類ID(ITクイズ⇒1,自己紹介クイズ⇒2)</label>
-                            <input type="number" name="quizId" id="form-quizId">
+                            <input type="number" max="2" name="quiz_id" id="form-quizId">
                         </div>
 
                         <button type="submit">登録</button>

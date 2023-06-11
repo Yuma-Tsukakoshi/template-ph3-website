@@ -13,8 +13,6 @@ class Choice1Controller extends Controller
     public function index()
     {
         //
-        $questions = Question::all();
-        return view('auth_.quiz1', compact('questions'));
     }
 
     /**
