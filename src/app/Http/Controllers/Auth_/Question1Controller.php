@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Question;
 
 class Question1Controller extends Controller
 {
@@ -20,6 +21,7 @@ class Question1Controller extends Controller
     public function create()
     {
         //
+        return view('auth_.quiz1.create');
     }
 
     /**
@@ -28,6 +30,14 @@ class Question1Controller extends Controller
     public function store(Request $request)
     {
         //
+        $quiz1 = new Question;
+        $quiz1->question = $request->input('content');
+        $quiz1->answer = $request->input(('image'));
+        $quiz1->answer = $request->input(('supplement'));
+        
+        $quiz1->save();
+
+        return redirect()->route('auth.quiz1');
     }
 
     /**

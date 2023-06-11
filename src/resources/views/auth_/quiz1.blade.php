@@ -3,6 +3,7 @@
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
           ITクイズ
       </h2>
+      <a href="{{ route('auth.quiz1.create') }}">{{ __('新規作成') }}</a>
   </x-slot>
 
   <x-slot name="table">
