@@ -25,7 +25,7 @@ Route::get('/', function () {
 //トップページ表示
 Route::get('/index', function () {
     return view('index');
-});
+})->name('top');
 
 // クイズページ表示 1と2はid属性で指定する
 // Route::get('/quizzes', [QuizController::class, 'index']);
