@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\Question1Controller;
 use App\Http\Controllers\IndexController;
 use GuzzleHttp\Psr7\Query;
 use Illuminate\Support\Facades\Route;
@@ -39,7 +40,7 @@ Route::get('/auth', function () {
 
 // nameで指定した名前でルーティングを呼び出すことができる
 Route::get('/auth/user',[AuthController::class, 'index'])->name('auth.user');
-Route::get('/auth/quiz1',[AuthController::class, 'quiz1'])->name('auth.quiz1');
+Route::get('/auth/quiz1',[Question1Controller::class, 'quiz1'])->name('auth.quiz1');
 
 Route::middleware(['auth','admin'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

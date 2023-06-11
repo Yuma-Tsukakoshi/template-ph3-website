@@ -14,13 +14,4 @@ class AuthController extends Controller
         $users = User::all();
         return view('auth_.user', compact('users'));
     }
-    public function quiz1()
-    {
-        $questions = Question::all();
-        return view('auth_.quiz1', compact('questions'));
-    }
-    // public function quiz1(){
-    //     $questions = User::all();
-    //     return view('profile.quiz1',compact('questions'));
-    // }
 }

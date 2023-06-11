@@ -22,7 +22,7 @@
               <p class="font-semibold items-center text-sm">{{ $question->id }}</p>
             </td>
             <td class="px-4 py-3">
-              <p class="font-semibold items-center text-xs">{{ $question->content}}</p>
+              <p class="font-semibold items-center text-sm">{{ $question->content}}</p>
             </td>
             <td class="px-4 py-3">
               <p class="font-semibold items-center text-sm">{{ $question->image}}</p>
