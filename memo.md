@@ -12,3 +12,6 @@ old関数 ⇒ バリデーションエラー前の値を残しておく
 エラー文の出力：<x-input-error> componentsファイルの中のエラー文
 
 
+### ルートにgateをつけてアクセスを制限
+AuthServiceProvider.phpに記入
+設定するときはmiddlewareで（can:define名）でtestゲート記入
