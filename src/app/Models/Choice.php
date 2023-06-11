@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Choice extends Model
 {
+    use softDeletes;
     use HasFactory;
     protected $fillable = [
         'name',
@@ -21,5 +23,6 @@ class Choice extends Model
     public function choices()
     {
         return $this;
+        // return $this->belongsTo(Question::class, 'question_id');
     }
 }

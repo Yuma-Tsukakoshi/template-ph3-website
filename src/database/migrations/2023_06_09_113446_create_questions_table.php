@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('supplement')->nullable();
             $table->unsignedBigInteger('quiz_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +27,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('questions');
+        // Schema::dropIfExists('questions');
+        Schema::table('questions', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 };
