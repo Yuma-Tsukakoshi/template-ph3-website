@@ -14,25 +14,22 @@
                     {{-- {{追加していく}} --}}
                     <h1>編集</h1>
                     <form method="POST" action="{{route('auth.quiz1.update',['id' =>$question->id])}}">
-                        {{-- @method('PATCH') --}}
-                        {{-- method patchとは？ --}}
                         @csrf
-
+                        {{-- @method('patch') --}}
                         <div>
                             問題文
-                            <input type="text" name=content value="{{ $question->content}}">
+                            <input type="text" name=content value="{{old('content', $question->content)}}">
                         </div>
 
                         <div>
                             画像
-                            <input type="text" name=image value="{{ $question->image }}">
+                            <input type="text" name=image value="{{old('image',$question->image)}}">
                         </div>
 
                         <div>
                             引用文
-                            <input type="text" name=supplement value="{{ $question->supplement}}">
+                            <input type="text" name=supplement value="{{old('supplement', $question->supplement) }}">
                         </div>
-
                         <input type="submit" value="更新する">
                         <a href="{{route('auth.quiz1')}}">{{ __('一覧に戻る') }}</a>
                     </form>

@@ -74,17 +74,21 @@ class Question1Controller extends Controller
 
         $question->save();
 
+        $request->session()->flash('message', '更新が完了しました。');
+
         return redirect()->route('auth.quiz1');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
         //
         $question = Question::find($id);
         $question->delete();
+
+        $request->session()->flash('message', '削除が完了しました。');
 
         return redirect()->route('auth.quiz1');
     }
