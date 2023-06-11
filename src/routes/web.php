@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\IndexController;
@@ -36,7 +37,8 @@ Route::get('/auth', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/auth/user',[ProfileController::class, 'index']);
+// nameで指定した名前でルーティングを呼び出すことができる
+Route::get('/auth/user',[AuthController::class, 'index'])->name('auth.user');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

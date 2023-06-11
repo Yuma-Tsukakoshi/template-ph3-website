@@ -30,7 +30,7 @@
                         </a>
                     </td>
                     <td class="px-4 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="#">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="{{route('auth.user')}}">
                             <h2 class="ml-4">ユーザー(管理者)へ</h2>
                         </a>
                     </td>
