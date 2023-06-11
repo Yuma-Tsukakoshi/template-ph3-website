@@ -32,11 +32,11 @@ Route::get('/quizzes/1', [QuizController::class , 'index']);
 // Route::get('/quizzes/2', [QuizController::class , 'index']);
 
 
-Route::get('/dashboard', function () {
+Route::get('/auth', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard/user',[ProfileController::class, 'index']);
+Route::get('/auth/user',[ProfileController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
