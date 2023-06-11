@@ -39,6 +39,7 @@ Route::get('/auth', function () {
 
 // nameで指定した名前でルーティングを呼び出すことができる
 Route::get('/auth/user',[AuthController::class, 'index'])->name('auth.user');
+Route::get('/auth/quiz1',[AuthController::class, 'quiz1'])->name('auth.quiz1');
 
 Route::middleware(['auth','admin'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

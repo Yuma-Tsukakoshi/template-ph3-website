@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          ユーザー
+          ITクイズ
       </h2>
   </x-slot>
 
@@ -9,27 +9,26 @@
     <table class="w-full whitespace-no-wrap">
       <thead>
         <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b">
-          <th class="px-4 py-3">ユーザーID</th>
-          <th class="px-4 py-3">名前</th>
-          <th class="px-4 py-3">メールアドレス</th>
-          <th class="px-4 py-3">登録日時</th>
-          <th class="px-4 py-3">操作</th>
+          <th class="px-4 py-3">ID</th>
+          <th class="px-4 py-3">問題文</th>
+          <th class="px-4 py-3">画像名</th>
+          <th class="px-4 py-3">引用文</th>
         </tr>
       </thead>
       <tbody class="bg-white divide-y">
-        @foreach ($users as $user)
+        @foreach ($questions as $question)
           <tr class="text-gray-700">
             <td class="px-4 py-3">
-              <p class="font-semibold items-center text-sm">{{ $user->id }}</p>
+              <p class="font-semibold items-center text-sm">{{ $question->id }}</p>
             </td>
             <td class="px-4 py-3">
-              <p class="font-semibold items-center text-sm">{{ $user->name}}</p>
+              <p class="font-semibold items-center text-xs">{{ $question->content}}</p>
             </td>
             <td class="px-4 py-3">
-              <p class="font-semibold items-center text-sm">{{ $user->email}}</p>
+              <p class="font-semibold items-center text-sm">{{ $question->image}}</p>
             </td>
             <td class="px-4 py-3">
-              <p class="font-semibold items-center text-sm">{{ $user->created_at}}</p>
+              <p class="font-semibold items-center text-sm">{{ $question->supplement}}</p>
             </td>
             <td class="px-4 py-3">
               <div class="flex items-center space-x-4 text-sm">
