@@ -5,7 +5,7 @@
     </span>
     <ul class="mt-6">
       <li class="relative px-6 py-3 mt-4">
-        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="#">
+        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="{{route('auth.quiz1')}}">
           <span class="ml-4">ITクイズ</span>
         </a>
       </li>
@@ -15,7 +15,7 @@
         </a>
       </li>
       <li class="relative px-6 py-3 mt-4">
-        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="#">
+        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="{{route('auth.user')}}">
           <span class="ml-4">ユーザー(管理者)</span>
         </a>
       </li>
