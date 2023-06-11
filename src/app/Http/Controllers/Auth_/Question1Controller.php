@@ -34,7 +34,7 @@ class Question1Controller extends Controller
         $quiz1->question = $request->input('content');
         $quiz1->answer = $request->input(('image'));
         $quiz1->answer = $request->input(('supplement'));
-        
+
         $quiz1->save();
 
         return redirect()->route('auth.quiz1');
@@ -45,7 +45,7 @@ class Question1Controller extends Controller
      */
     public function show(string $id)
     {
-        //
+        //詳細表示を行うが今回は使わない
     }
 
     /**
@@ -54,6 +54,8 @@ class Question1Controller extends Controller
     public function edit(string $id)
     {
         //
+        $question = Question::find($id);
+        return view('auth_.quiz1.edit', compact('question')); 
     }
 
     /**
