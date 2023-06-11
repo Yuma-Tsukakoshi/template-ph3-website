@@ -31,9 +31,10 @@ class Question1Controller extends Controller
     {
         //
         $quiz1 = new Question;
-        $quiz1->question = $request->input('content');
-        $quiz1->answer = $request->input(('image'));
-        $quiz1->answer = $request->input(('supplement'));
+        $quiz1->content = $request->input('content');
+        $quiz1->image = $request->input(('image'));
+        $quiz1->supplement = $request->input(('supplement'));
+        $quiz1->quiz_id = $request->input(('quiz_id'));
 
         $quiz1->save();
 
@@ -64,6 +65,14 @@ class Question1Controller extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $question = Question::find($id);
+        $question->content = $request->input('content');
+        $question->image = $request->input(('image'));
+        $question->supplement = $request->input(('supplement'));
+
+        $question->save();
+
+        return redirect()->route('auth.quiz1');
     }
 
     /**

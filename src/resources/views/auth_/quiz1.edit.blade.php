@@ -13,9 +13,9 @@
                 <div class="p-6 text-gray-900">
                     {{-- {{追加していく}} --}}
                     <h1>編集</h1>
-
-                    <form method="POST" action="{{route('questions.update',['question' =>$question->id])}}">
-                        @method('PATCH')
+                    <form method="POST" action="{{route('auth.quiz1.update',['id' =>$question->id])}}">
+                        {{-- @method('PATCH') --}}
+                        {{-- method patchとは？ --}}
                         @csrf
 
                         <div>
@@ -32,7 +32,6 @@
                             引用文
                             <input type="text" name=supplement value="{{ $question->supplement}}">
                         </div>
-
 
                         <input type="submit" value="更新する">
                         <a href="{{route('auth.quiz1')}}">{{ __('一覧に戻る') }}</a>

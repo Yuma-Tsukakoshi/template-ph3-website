@@ -46,6 +46,7 @@ Route::group(['prefix'=>'member'],function(){
     Route::get('/auth/quiz1/create',[Question1Controller::class, 'create'])->name('auth.quiz1.create');
     Route::post('/auth/quiz1/store',[Question1Controller::class, 'store'])->name('auth.quiz1.store');
     Route::get('/auth/quiz1/edit/{id}',[Question1Controller::class, 'edit'])->name('auth.quiz1.edit');
+    Route::post('/auth/quiz1/update/{id}',[Question1Controller::class, 'update'])->name('auth.quiz1.update');
 });
 
 Route::middleware(['auth','admin'])->group(function () {

@@ -33,6 +33,11 @@
                             <label for="form-supplement">引用</label>
                             <input type="text" name="supplement" id="form-supplement">
                         </div>
+                        
+                        <div>
+                            <label for="form-quizId">分類ID(ITクイズ⇒1,自己紹介クイズ⇒2)</label>
+                            <input type="number" name="quizId" id="form-quizId">
+                        </div>
 
                         <button type="submit">登録</button>
                         <a href="{{ route('auth.quiz1')}}">{{ __('一覧へ戻る') }}</a>
