@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\Question1Controller;
 use App\Http\Controllers\IndexController;
 use GuzzleHttp\Psr7\Query;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,15 @@ Route::get('/auth', function () {
 
 // nameで指定した名前でルーティングを呼び出すことができる
 Route::get('/auth/user',[AuthController::class, 'index'])->name('auth.user');
+
+Route::group(['prefix'=>'member'],function(){
+    Route::get('/auth/quiz1',[Question1Controller::class, 'index'])->name('auth.quiz1');
+    Route::get('/auth/quiz1/create',[Question1Controller::class, 'create'])->name('auth.quiz1.create');
+    Route::post('/auth/quiz1/store',[Question1Controller::class, 'store'])->name('auth.quiz1.store');
+    Route::get('/auth/quiz1/edit/{id}',[Question1Controller::class, 'edit'])->name('auth.quiz1.edit');
+    Route::post('/auth/quiz1/update/{id}',[Question1Controller::class, 'update'])->name('auth.quiz1.update');
+    Route::post('/auth/quiz1/destroy/{id}',[Question1Controller::class, 'destroy'])->name('auth.quiz1.destroy');
+});
 
 Route::middleware(['auth','admin'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

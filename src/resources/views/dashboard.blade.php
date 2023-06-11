@@ -20,7 +20,7 @@
             <tbody class="bg-white divide-y">
                 <tr class="text-gray-700 text-3xl">
                     <td class="px-4 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="#">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800" href="{{route('auth.quiz1')}}">
                             <h2 class="ml-4">ITクイズ一覧へ</h2>
                         </a>
                     </td>
