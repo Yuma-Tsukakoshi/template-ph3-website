@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('choices2', function (Blueprint $table) {
             //
+            $table->softDeletes()->after('valid');
         });
     }
 
@@ -23,6 +24,7 @@ return new class extends Migration
     {
         Schema::table('choices2', function (Blueprint $table) {
             //
+            $table->dropSoftDeletes();
         });
     }
 };
