@@ -9,7 +9,6 @@ use App\Models\Choice2;
 
 class Question2 extends Model
 {
-    use HasFactory;
     use SoftDeletes;
     use HasFactory;
     protected $fillable = [

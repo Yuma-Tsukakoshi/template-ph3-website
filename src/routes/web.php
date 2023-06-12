@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\Question1Controller;
+use App\Http\Controllers\Question2Controller;
 use App\Http\Controllers\IndexController;
 use GuzzleHttp\Psr7\Query;
 use Illuminate\Support\Facades\Route;
@@ -50,7 +51,14 @@ Route::group(['prefix'=>'member'],function(){
     Route::post('/auth/quiz1/destroy/{id}',[Question1Controller::class, 'destroy'])->name('auth.quiz1.destroy');
 });
 
-Route::resource('questions2', UserController::class);
+Route::resource('questions2', Question2Controller::class);
+//   GET|HEAD        questions2 ............  questions2.index › Question2Controller@index  
+//   POST            questions2 ............  questions2.store › Question2Controller@store  
+//   GET|HEAD        questions2/create ...    questions2.create › Question2Controller@create  
+//   GET|HEAD        questions2/{questions2}  questions2.show › Question2Controller@show  
+//   PUT|PATCH       questions2/{questions2}  questions2.update › Question2Controller@update  
+//   DELETE          questions2/{questions2}  questions2.destroy › Question2Controller@destroy  
+//   GET|HEAD        questions2/{questions2}/edit 
 
 Route::middleware(['auth','admin'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

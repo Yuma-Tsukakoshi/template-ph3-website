@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Choice2 extends Model
 {
-    use HasFactory;
     use softDeletes;
     use HasFactory;
     protected $fillable = [
