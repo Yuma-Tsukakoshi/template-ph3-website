@@ -13,8 +13,7 @@
                 <div class="p-6 text-gray-900">
                     {{-- {{追加していく}} --}}
                     <h1>新規作成</h1>
-
-                    <form method="POST" action="{{route('auth.quiz1.store')}}" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('question2.store')}}" enctype="multipart/form-data">
                         @csrf
 
                         <div>
@@ -36,11 +35,11 @@
                         
                         <div>
                             <label for="form-quizId">分類ID(ITクイズ⇒1,自己紹介クイズ⇒2)</label>
-                            <input type="number" max="2" name="quiz_id" id="form-quizId">
+                            <input type="number" min="1" max="2" name="quiz_id" id="form-quizId">
                         </div>
 
                         <button type="submit">登録</button>
-                        <a href="{{ route('auth.quiz1')}}">{{ __('一覧へ戻る') }}</a>
+                        <a href="{{ route('questions2.index')}}">{{ __('一覧へ戻る') }}</a>
                     </form>
 
                 </div>
