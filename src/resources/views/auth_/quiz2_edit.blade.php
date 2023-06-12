@@ -13,7 +13,7 @@
                 <div class="p-6 text-gray-900">
                     {{-- {{追加していく}} --}}
                     <h1>編集</h1>
-                    <form method="POST" action="{{route('auth.quiz1.update',['id' =>$question->id])}}">
+                    <form method="POST" action="{{route('questions2.update',['id' =>$question->id])}}">
                         @csrf
                         {{-- @method('patch') --}}
                         <div>
@@ -31,7 +31,7 @@
                             <input type="text" name=supplement value="{{old('supplement', $question->supplement) }}">
                         </div>
                         <input type="submit" value="更新する">
-                        <a href="{{route('auth.quiz1')}}">{{ __('一覧に戻る') }}</a>
+                        <a href="{{route('questions2.index')}}">{{ __('一覧に戻る') }}</a>
                     </form>
 
                 </div>
