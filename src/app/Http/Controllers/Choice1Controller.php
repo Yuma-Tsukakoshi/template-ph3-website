@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use Illuminate\Http\Request;
 
-class Choice1Controller extends Controller
+class Choice_1Controller extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Quiz2Controller;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\Question1Controller;
 use App\Http\Controllers\Question2Controller;
@@ -52,9 +53,9 @@ Route::group(['prefix'=>'member'],function(){
 });
 
 Route::resource('questions2', Question2Controller::class);
-//   GET|HEAD        questions2 ............  questions2.index › Question2Controller@index  
-//   POST            questions2 ............  questions2.store › Question2Controller@store  
-//   GET|HEAD        questions2/create ...    questions2.create › Question2Controller@create  
+//   GET|HEAD        questions2 ....  questions2.index › Question2Controller@index  
+//   POST            questions2 .. questions2.store › Question2Controller@store  
+//   GET|HEAD        questions2/create ..  questions2.create › Question2Controller@create  
 //   GET|HEAD        questions2/{questions2}  questions2.show › Question2Controller@show  
 //   PUT|PATCH       questions2/{questions2}  questions2.update › Question2Controller@update  
 //   DELETE          questions2/{questions2}  questions2.destroy › Question2Controller@destroy  
