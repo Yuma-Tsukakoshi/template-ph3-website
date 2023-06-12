@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('choices', function (Blueprint $table) {
-            //
+            //新たにカラム追加するときはファイル分ける！
             $table->softDeletes()->after('valid');
         });
     }
