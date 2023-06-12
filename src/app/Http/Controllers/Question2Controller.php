@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Question2;
 use Illuminate\Http\Request;
 
 class Question2Controller extends Controller
@@ -33,7 +34,7 @@ class Question2Controller extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Question2 $question2)
     {
         //
     }
@@ -41,7 +42,7 @@ class Question2Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Question2 $question2)
     {
         //
     }
@@ -49,7 +50,7 @@ class Question2Controller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Question2 $question2)
     {
         //
     }
@@ -57,7 +58,7 @@ class Question2Controller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Question2 $question2)
     {
         //
     }

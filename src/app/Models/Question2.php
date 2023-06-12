@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Choice;
+use App\Models\Choice2;
 
-
-class Question extends Model
+class Question2 extends Model
 {
+    use HasFactory;
     use SoftDeletes;
     use HasFactory;
     protected $fillable = [
@@ -29,6 +29,6 @@ class Question extends Model
     public function choices()
     {
         // 1対多の関係を定義
-        return $this->hasMany(Choice::class);
+        return $this->hasMany(Choice2::class);
     }
 }
