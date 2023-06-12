@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('supplement')->nullable();
             $table->unsignedBigInteger('quiz_id');
-            $table->timestamps();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 

@@ -16,11 +16,15 @@ class Question extends Model
         'content',
         'image',
         'supplement',
+        // 'deleted_at',
     ];
 
     protected $guarded = [
         'id',
         'quiz_id',
+    ];
+    protected $dates = [
+        'deleted_at',
     ];
 
     public function choices()
