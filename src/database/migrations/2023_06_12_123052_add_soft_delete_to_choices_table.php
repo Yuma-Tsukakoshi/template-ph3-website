@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('question', function (Blueprint $table) {
+        Schema::table('choices', function (Blueprint $table) {
             //
-            $table->softDeletes()->after('quiz_id');
+            $table->softDeletes()->after('valid');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('question', function (Blueprint $table) {
+        Schema::table('choices', function (Blueprint $table) {
             //
             $table->dropSoftDeletes();
         });
