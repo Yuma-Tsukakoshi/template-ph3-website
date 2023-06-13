@@ -18,6 +18,10 @@
                         @csrf
                         <div>
                             <label for="form-name">選択肢</label>
+                            <x-input-error :message="$errors->get("name")" class="mt-2"/>
+                                @foreach ($errors->all() as $message)
+                                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                @endforeach
                             <input type="text" name="name" id="form-name" required>
                         </div>
 

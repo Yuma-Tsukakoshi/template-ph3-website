@@ -34,7 +34,12 @@ class ChoiceController extends Controller
     public function store($question_id, Request $request)
     {
         //
+        $validated = $request->validate([
+            'name' => 'max:250',
+        ]);
+
         $choices = new Choice;
+        $choices = Choice::create($validated);
         // $choices->question_id=$request->$question->id;
         $choices->question_id = $question_id;
         $choices->name = $request->input('name');
@@ -71,7 +76,11 @@ class ChoiceController extends Controller
     public function update( $id,Request $request)
     {
         //
+        $validated = $request->validate([
+            'name' => 'max:250',
+        ]);
         $choices = Choice::find($id);
+        $choices = Choice::create($validated);
         // $choices->question_id=$request->$question->id;
         $choices->name = $request->input('name');
         $choices->valid = $request->input('valid');

@@ -33,8 +33,8 @@ class Question1Controller extends Controller
     {
         //
         $validated = $request->validate([
-            'content' => 'required|max:250',
-            'supplement' => 'max:250',
+            'content' => 'required|max:200',
+            'supplement' => 'max:200',
         ]);
 
 
@@ -74,12 +74,12 @@ class Question1Controller extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $validated = $request->validate([
-            'content' => 'required|max:250',
-            'supplement' => 'max:250',
-        ]);
+        // $validated = $request->validate([
+        //     'content' => 'required|max:250',
+        //     'supplement' => 'max:250',
+        // ]);
 
-        $question = Question::create($validated);
+        // $question = Question::create($validated);
         $question = Question::find($id);
         $question->content = $request->input('content');
         $question->image = $request->input(('image'));
