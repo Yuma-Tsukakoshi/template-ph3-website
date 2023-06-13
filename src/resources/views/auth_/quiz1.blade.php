@@ -30,7 +30,9 @@
               <p class="font-semibold items-center text-sm">{{ $question->id }}</p>
             </td>
             <td class="px-4 py-3">
-              <p class="font-semibold items-center text-sm">{{ $question->content}}</p>
+              <a href="{{route('choices.index',['question_id' => $question->id])}}">
+                <p class="font-semibold items-center text-sm">{{ $question->content}}</p>
+              </a>
             </td>
             <td class="px-4 py-3">
               <p class="font-semibold items-center text-sm">{{ $question->image}}</p>
