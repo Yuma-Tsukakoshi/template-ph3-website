@@ -39,8 +39,8 @@ class ChoiceController extends Controller
         ]);
 
         $choices = new Choice;
-        $choices = Choice::create($validated);
-        // $choices->question_id=$request->$question->id;
+        // $choices = Choice::create($validated);
+        // $choices->question_id=$request->$question_id;
         $choices->question_id = $question_id;
         $choices->name = $request->input('name');
         $choices->valid = $request->input('valid');
@@ -72,16 +72,18 @@ class ChoiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    /// 先に読み込ませたいパラメータを書いてからRequestを書く
-    public function update( $id,Request $request)
+    /// 先に読み込ませたいパラメータを書いてからRequestを書く 
+    //めっちゃ大事！ メソッド内では使われないけど、メソッドの引数に入れることで、引き渡している（ちなみに、$question_id 入れないと正しく編集されないし削除もされない⇒別の設問に影響出る）
+    public function update($question_id, $id,Request $request)
     {
         //
         $validated = $request->validate([
             'name' => 'max:250',
         ]);
+
+        // $choices = Choice::create($validated);
         $choices = Choice::find($id);
-        $choices = Choice::create($validated);
-        // $choices->question_id=$request->$question->id;
+        // $choices->question_id=$request->$question_id->id;
         $choices->name = $request->input('name');
         $choices->valid = $request->input('valid');
 
@@ -94,7 +96,7 @@ class ChoiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy($question_id,$id)
     {
         //
         $choices = Choice::find($id);
