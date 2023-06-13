@@ -7,6 +7,9 @@
 
 <img width="1446" alt="スクリーンショット 2023-06-09 19 39 34" src="https://github.com/posse-ap/template-ph3-website/assets/33271639/69d42fe3-4e3a-4087-91a9-c55640a2671f">
 
+# db:seederでデータを登録する
+php artisan db:seed --class QuestionSeeder
+
 
 # データベースの作成
 1. appコンテナに入っていることを確認

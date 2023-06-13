@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Quiz2Controller;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\Question1Controller;
+use App\Http\Controllers\Question2Controller;
+use App\Http\Controllers\ChoiceController;
 use App\Http\Controllers\IndexController;
 use GuzzleHttp\Psr7\Query;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +34,7 @@ Route::get('/index', function () {
 // クイズページ表示 1と2はid属性で指定する
 // Route::get('/quizzes', [QuizController::class, 'index']);
 Route::get('/quizzes/1', [QuizController::class , 'index']);
-// Route::get('/quizzes/2', [QuizController::class , 'index']);
+Route::get('/quizzes/2', [Quiz2Controller::class , 'index']);
 
 
 Route::get('/auth', function () {
@@ -49,6 +52,27 @@ Route::group(['prefix'=>'member'],function(){
     Route::post('/auth/quiz1/update/{id}',[Question1Controller::class, 'update'])->name('auth.quiz1.update');
     Route::post('/auth/quiz1/destroy/{id}',[Question1Controller::class, 'destroy'])->name('auth.quiz1.destroy');
 });
+
+// 自己紹介の方は一旦やらん
+Route::resource('questions2', Question2Controller::class);
+//   GET|HEAD        questions2 ....  questions2.index › Question2Controller@index  
+//   POST            questions2 .. questions2.store › Question2Controller@store  
+//   GET|HEAD        questions2/create ..  questions2.create › Question2Controller@create  
+//   GET|HEAD        questions2/{questions2}  questions2.show › Question2Controller@show  
+//   PUT|PATCH       questions2/{questions2}  questions2.update › Question2Controller@update  
+//   DELETE          questions2/{questions2}  questions2.destroy › Question2Controller@destroy  
+//   GET|HEAD        questions2/{questions2}/edit 
+
+
+// choiceのresource_methodを作成する
+ROUTE::resource('/{question_id}/choices', ChoiceController::class);
+//  GET|HEAD     {question_id}/choices ...... choices.index › ChoiceController@index  
+//   POST {question_id}/choices ....... choices.store › ChoiceController@store  
+//   GET|HEAD {question_id}/choices/create ....... choices.create › ChoiceController@create  
+//   GET|HEAD {question_id}/choices/{choice}  choices.show › ChoiceController@show  
+//   PUT|PATCH    {question_id}/choices/{choice} ..... choices.update › ChoiceController@update  
+//   DELETE   {question_id}/choices/{choice} ... choices.destroy › ChoiceController@destroy  
+//   GET|HEAD {question_id}/choices/{choice}/edit .... choices.edit › ChoiceController@edit
 
 Route::middleware(['auth','admin'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -5,30 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Choice;
 
-
-class Question extends Model
+class Choice2 extends Model
 {
-    use SoftDeletes;
+    use softDeletes;
     use HasFactory;
     protected $fillable = [
-        'content',
-        'image',
-        'supplement',
+        'name',
+        'valid',
     ];
 
     protected $guarded = [
         'id',
-        'quiz_id',
-    ];
-    protected $dates = [
-        'deleted_at',
+        'question_id',
     ];
 
     public function choices()
     {
-        // 1対多の関係を定義
-        return $this->hasMany(Choice::class);
+        return $this;
+        // return $this->belongsTo(Question::class, 'question_id');
     }
 }

@@ -1,9 +1,9 @@
 <x-app-layout>
   <x-slot name="header">
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          ITクイズ
+          自己紹介クイズ
       </h2>
-      <a href="{{ route('auth.quiz1.create') }}">{{ __('新規作成') }}</a>
+      <a href="{{ route('questions2.create') }}">{{ __('新規作成') }}</a>
       <div class="max-w-7xl mx-auto px-6">
         @if (session('message'))
             <div class="text-red-600 border font-bold" role="alert">
@@ -30,9 +30,7 @@
               <p class="font-semibold items-center text-sm">{{ $question->id }}</p>
             </td>
             <td class="px-4 py-3">
-              <a href="{{route('choices.index',['question_id' => $question->id])}}">
-                <p class="font-semibold items-center text-sm">{{ $question->content}}</p>
-              </a>
+              <p class="font-semibold items-center text-sm">{{ $question->content}}</p>
             </td>
             <td class="px-4 py-3">
               <p class="font-semibold items-center text-sm">{{ $question->image}}</p>
@@ -42,12 +40,12 @@
             </td>
             <td class="px-4 py-3">
               <div class="flex items-center space-x-4 text-sm">
-                  <a href="{{route('auth.quiz1.edit',['id'=>$question->id])}}">
+                  <a href="{{route('questions2.edit',['id'=>$question->id])}}">
                     <x-primary-button>
                       {{ __('編集') }}
                     </x-primary-button>
                   </a>
-                <form method="POST" action="{{route('auth.quiz1.destroy',['id'=>$question->id])}}">
+                <form method="POST" action="{{route('question2.destroy',['id'=>$question->id])}}">
                   @csrf
                   {{-- @method('delete') --}}
                   <x-primary-button class="bg-red-700 ml-2 btn-dell" >
@@ -61,4 +59,20 @@
       </tbody>
     </table>
   </x-slot>
+
+  @section('script')
+  <script>
+    $(function(){
+      $(".btn-dell").click(function(){
+        if(confirm("本当に削除しますか？")){
+        //そのままsubmit（削除）
+        }else{
+        //cancel
+        return false;
+        }
+      });
+    });
+  </script>
+  @endsection
+
 </x-app-layout>

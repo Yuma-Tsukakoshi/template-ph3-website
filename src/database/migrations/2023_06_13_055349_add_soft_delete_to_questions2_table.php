@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('questions', function (Blueprint $table) {
-            $table->id();
-            $table->string('content');
-            $table->string('image');
-            $table->string('supplement')->nullable();
-            $table->unsignedBigInteger('quiz_id');
-            $table->timestamps();
+        Schema::table('questions_2', function (Blueprint $table) {
+            //
+            $table->softDeletes()->after('quiz_id');
         });
     }
 
@@ -26,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('questions');
+        Schema::table('questions_2', function (Blueprint $table) {
+            //
+            $table->dropSoftDeletes();
+        });
     }
 };
