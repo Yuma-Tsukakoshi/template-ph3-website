@@ -16,7 +16,6 @@
 
                     <form method="POST" action="{{route('choices.store',['question_id' => $id])}}" >
                         @csrf
-
                         <div>
                             <label for="form-name">選択肢</label>
                             <input type="text" name="name" id="form-name" required>

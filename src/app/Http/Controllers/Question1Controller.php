@@ -32,7 +32,14 @@ class Question1Controller extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'content' => 'required|max:250',
+            'supplement' => 'max:250',
+        ]);
+
+
         $quiz1 = new Question;
+        $quiz1 = Question::create($validated);
         $quiz1->content = $request->input('content');
         $quiz1->image = $request->input(('image'));
         $quiz1->supplement = $request->input(('supplement'));
@@ -67,6 +74,12 @@ class Question1Controller extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $validated = $request->validate([
+            'content' => 'required|max:250',
+            'supplement' => 'max:250',
+        ]);
+
+        $question = Question::create($validated);
         $question = Question::find($id);
         $question->content = $request->input('content');
         $question->image = $request->input(('image'));

@@ -19,7 +19,11 @@
 
                         <div>
                             <label for="form-content">問題文</label>
-                            <input type="text" name="content" id="form-content" required>
+                            <x-input-error :message="$errors->get("content")" class="mt-2"/>
+                                @foreach ($errors->all() as $message)
+                                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                @endforeach
+                            <input type="text" name="content" id="form-content" required value="{{old('content')}}">
                         </div>
 
                         <div>
@@ -31,7 +35,11 @@
 
                         <div>
                             <label for="form-supplement">引用</label>
-                            <input type="text" name="supplement" id="form-supplement">
+                            <x-input-error :message="$errors->get("supplement")" class="mt-2"/>
+                                @foreach ($errors->all() as $message)
+                                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                @endforeach
+                            <input type="text" name="supplement" id="form-supplement" value="{{old('content')}}">
                         </div>
                         
                         <div>

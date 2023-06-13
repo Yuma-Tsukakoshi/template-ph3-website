@@ -19,18 +19,17 @@
                         @csrf
                         <div>
                             選択肢
-                            <input type="text" name="name" value="{{ $choice->name }}">
+                            <input type="text" name="name" value="{{old('name',$choice->name)}}">
                         </div>
 
                         <div>
                             正誤
-                            <input type="text" name="valid" value="{{ $choice->valid }}">
+                            <input type="text" name="valid" value="{{old('valid',$choice->valid )}}">
                         </div>
 
                         <input type="submit" value="更新する">
-                        <a href="{{route('questions.index')}}">{{ __('詳細に戻る') }}</a>
+                        <a href="{{route('auth.quiz1')}}">{{ __('詳細に戻る') }}</a>
                     </form>
-
                 </div>
             </div>
         </div>

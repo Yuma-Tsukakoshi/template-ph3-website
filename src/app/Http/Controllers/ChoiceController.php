@@ -16,7 +16,7 @@ class ChoiceController extends Controller
         //
         $choices = Choice::where('question_id', $question_id)->get();
         // dd($choices);
-        return view('choices.index', compact('choices', 'question_id'));
+        return view('auth_.quiz1_choice_index', compact('choices', 'question_id'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ChoiceController extends Controller
     public function create($id)
     {
         //
-        return view('choices.create', compact('id'));
+        return view('auth_.quiz1_choice_create', compact('id'));
     }
 
     /**
@@ -42,7 +42,7 @@ class ChoiceController extends Controller
 
         $choices->save();
 
-        return redirect('auth.quiz1');
+        return redirect()->route('auth.quiz1');
     }
 
     /**
@@ -60,8 +60,8 @@ class ChoiceController extends Controller
     public function edit($question_id, $id)
     {
         //
-        $choices = Choice::find($id);
-        return view('choices.edit', compact('choices', 'question_id', 'id'));
+        $choice = Choice::find($id);
+        return view('auth_.quiz1_choice_edit', compact('choice', 'question_id', 'id'));
     }
 
     /**
@@ -79,7 +79,7 @@ class ChoiceController extends Controller
         //DBに保存
         $choices->save();
 
-        return redirect('auth.quiz1');
+        return redirect()->route('auth.quiz1');
     }
 
     /**
@@ -92,6 +92,6 @@ class ChoiceController extends Controller
 
         $choices->delete();
 
-        return redirect('auth.quiz1');
+        return redirect()->route('auth.quiz1');
     }
 }
