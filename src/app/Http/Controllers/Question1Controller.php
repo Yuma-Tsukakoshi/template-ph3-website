@@ -14,7 +14,7 @@ class Question1Controller extends Controller
     {
         //
         // $questions = Question::all();
-        $questions = Question::paginate(20);
+        $questions = Question::withTrashed()->paginate(20);
         return view('auth_.quiz1', compact('questions'));
     }
 
