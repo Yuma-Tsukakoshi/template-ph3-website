@@ -13,7 +13,8 @@ class Question1Controller extends Controller
     public function index()
     {
         //
-        $questions = Question::all();
+        // $questions = Question::all();
+        $questions = Question::withTrashed()->paginate(20);
         return view('auth_.quiz1', compact('questions'));
     }
 
@@ -37,13 +38,19 @@ class Question1Controller extends Controller
             'supplement' => 'max:200',
         ]);
 
+        // 画像フォームでリクエストした画像を取得
+        $img = $request->file('image');
+        // storage > public > img配下に画像が保存される
+        $path = $img->store('img','custom');
+
 
         $quiz1 = new Question;
-        $quiz1 = Question::create($validated);
+        // $quiz1 = Question::create($validated);
         $quiz1->content = $request->input('content');
-        $quiz1->image = $request->input(('image'));
-        $quiz1->supplement = $request->input(('supplement'));
-        $quiz1->quiz_id = $request->input(('quiz_id'));
+        // フォームでtype=”file”としているので、file()でリクエストされたファイル情報を取得します
+        $quiz1->image = $path;
+        $quiz1->supplement = $request->input('supplement');
+        $quiz1->quiz_id = $request->input('quiz_id');
 
         $quiz1->save();
 

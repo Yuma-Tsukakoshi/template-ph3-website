@@ -19,8 +19,8 @@
         <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b">
           <th class="px-4 py-3">ID</th>
           <th class="px-4 py-3">問題文</th>
-          <th class="px-4 py-3">画像名</th>
           <th class="px-4 py-3">引用文</th>
+          <th class="px-4 py-3">状態</th>
         </tr>
       </thead>
       <tbody class="bg-white divide-y">
@@ -35,10 +35,16 @@
               </a>
             </td>
             <td class="px-4 py-3">
-              <p class="font-semibold items-center text-sm">{{ $question->image}}</p>
+              <p class="font-semibold items-center text-sm">{{ $question->supplement}}</p>
             </td>
             <td class="px-4 py-3">
-              <p class="font-semibold items-center text-sm">{{ $question->supplement}}</p>
+              <p class="font-semibold items-center text-sm">
+                @if($question->trashed())
+                  <p>削除済み</p>
+                @else
+                  <p>表示中</p>
+                @endif
+              </p>
             </td>
             <td class="px-4 py-3">
               <div class="flex items-center space-x-4 text-sm">
@@ -59,6 +65,9 @@
           </tr>
         @endforeach
       </tbody>
+      <div class="mb-4">
+        {{ $questions->links()}}
+      </div>
     </table>
   </x-slot>
 </x-app-layout>

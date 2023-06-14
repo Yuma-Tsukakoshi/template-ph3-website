@@ -19,12 +19,19 @@
                                 <th>問題ID</th>
                                 <th>選択肢</th>
                                 <th>正誤</th>
+                                <th>状態</th>
                             </tr>
                             @foreach ($choices as $choice)
                                 <tr class="py-5">
                                     <td>{{ $choice->question_id }}</td>
                                     <td>{{ $choice->name }}</td>
                                     <td>{{ $choice->valid }}</td>
+                                    <td>
+                                        @if ($choice->trashed())
+                                            <p>削除済み</p>
+                                        @else
+                                            <p>表示中</p>
+                                        @endif
                                     <td><a href="{{ route('choices.edit', ['question_id' => $choice->question_id,'choice'=>$choice->id]) }}">{{ __('編集') }}</a>
                                     </td>
                                     <td>
