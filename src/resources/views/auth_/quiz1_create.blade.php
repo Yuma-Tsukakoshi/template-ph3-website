@@ -28,9 +28,7 @@
 
                         <div>
                             <label for="form-image">画像</label>
-                            {{-- <input type="file" name="telephone" id="form-tel"> --}}
-                            {{-- TODO fileを画像として挿入 --}}
-                            <input type="text" name="image" id="form-image" required>
+                            <input type="file" name="image" id="form-image" required>
                         </div>
 
                         <div>

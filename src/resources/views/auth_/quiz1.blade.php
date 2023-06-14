@@ -59,6 +59,9 @@
           </tr>
         @endforeach
       </tbody>
+      <div class="mb-4">
+        {{ $questions->links()}}
+      </div>
     </table>
   </x-slot>
 </x-app-layout>
