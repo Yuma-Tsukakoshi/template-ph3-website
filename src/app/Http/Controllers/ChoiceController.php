@@ -14,7 +14,7 @@ class ChoiceController extends Controller
     public function index($question_id)
     {
         //
-        $choices = Choice::where('question_id', $question_id)->get();
+        $choices = Choice::withTrashed()->where('question_id', $question_id)->get();
         // dd($choices);
         return view('auth_.quiz1_choice_index', compact('choices', 'question_id'));
     }
