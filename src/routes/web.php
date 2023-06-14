@@ -53,7 +53,6 @@ Route::group(['prefix'=>'member'],function(){
     Route::post('/auth/quiz1/destroy/{id}',[Question1Controller::class, 'destroy'])->name('auth.quiz1.destroy');
 });
 
-// 自己紹介の方は一旦やらん
 Route::resource('questions2', Question2Controller::class);
 //   GET|HEAD        questions2 ....  questions2.index › Question2Controller@index  
 //   POST            questions2 .. questions2.store › Question2Controller@store  
