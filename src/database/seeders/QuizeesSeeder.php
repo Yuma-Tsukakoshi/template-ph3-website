@@ -15,14 +15,14 @@ class QuizeesSeeder extends Seeder
     public function run(): void
     {
         //
-        DB::table('quizzes')->insert([
+        DB::table('quizees')->insert([
             [
                 'id' => 1,
                 'name' => 'ITクイズ',
             ],
             [
                 'id' => 2,
-                'content' => '自己紹介クイズ',
+                'name' => '自己紹介クイズ',
             ],
         ]);
     }
