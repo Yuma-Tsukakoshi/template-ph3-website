@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class QuizeesSeeder extends Seeder
 {
@@ -13,5 +15,15 @@ class QuizeesSeeder extends Seeder
     public function run(): void
     {
         //
+        DB::table('quizzes')->insert([
+            [
+                'id' => 1,
+                'name' => 'ITクイズ',
+            ],
+            [
+                'id' => 2,
+                'content' => '自己紹介クイズ',
+            ],
+        ]);
     }
 }
