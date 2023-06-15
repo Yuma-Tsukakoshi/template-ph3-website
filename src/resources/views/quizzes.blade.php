@@ -26,8 +26,10 @@
             <section class="p-hero p-quiz-hero">
                 <div class="l-container">
                     <h1 class="p-hero__title">
-                        <a href="{{ route('') }}"><span class="p-hero__title__inline">ITクイズ</span></a>
-                        <a href="{{ route('') }}"><span class="p-hero__title__inline">自己紹介クイズ</span></a>
+                        <a href="{{ route('quizzes.index',1) }}"><span class="p-hero__title__inline">ITクイズ</span></a>
+                        <a href="{{ route('quizzes.index',2)}}"><span class="p-hero__title__inline">自己紹介クイズ</span></a>
+                        {{-- <span class="p-hero__title__inline">ITクイズ</span>
+                        <span class="p-hero__title__inline">自己紹介クイズ</span> --}}
                     </h1>
                 </div>
             </section>
