@@ -32,9 +32,8 @@ Route::get('/index', function () {
 })->name('top');
 
 // クイズページ表示 1と2はid属性で指定する
-// Route::get('/quizzes', [QuizController::class, 'index']);
-Route::get('/quizzes/1', [QuizController::class , 'index']);
-Route::get('/quizzes/2', [Quiz2Controller::class , 'index']);
+Route::get('/quizzes', [IndexController::class, 'quiz'])->name('quizzes');
+Route::get('/quizzes/{id}', [QuizController::class , 'index'])->name('quizzes.index');
 
 
 Route::get('/auth', function () {
